@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://kotharishalin-max.github.io/lila-baa-memorial/",
   "scripts": {
     "sync-md": "bash scripts/sync-besnu-md.sh",
     "prebuild": "node scripts/build-besnu-json.mjs",
