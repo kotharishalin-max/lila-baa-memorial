@@ -1,0 +1,163 @@
+.track-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.track-card.is-open {
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-soft);
+}
+
+.track-card-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.track-card-header:hover {
+  background: var(--bg-sunken);
+}
+
+.track-number {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1;
+  min-width: 2ch;
+  text-align: right;
+}
+
+.track-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.track-title-romanized {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--text);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-title-gujarati {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.3;
+}
+
+.track-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.track-type-badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--divider);
+  font-weight: 500;
+}
+
+.track-type-badge.type-speech {
+  background: #f4ebe1;
+  color: #6d5537;
+  border-color: #e4d5bd;
+}
+
+.track-type-badge.type-mantra {
+  background: #efe6d8;
+  color: #5c4722;
+  border-color: #dbc8a7;
+}
+
+.track-type-badge.type-bhajan {
+  background: #f6efe5;
+  color: #6e5a3e;
+  border-color: #e8dfd3;
+}
+
+.track-composer {
+  font-style: italic;
+  color: var(--text-soft);
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-chevron {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--accent);
+  width: 1.6rem;
+  height: 1.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bg-sunken);
+  transition: transform 0.2s ease;
+}
+
+.track-card.is-open .track-chevron {
+  background: var(--accent);
+  color: #fff;
+}
+
+.track-card-body {
+  padding: 1rem 1.25rem 1.5rem;
+  border-top: 1px solid var(--divider);
+  background: linear-gradient(to bottom, var(--bg-sunken), var(--bg-elevated) 140px);
+}
+
+@media (max-width: 720px) {
+  .track-card-header {
+    grid-template-columns: auto 1fr auto;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+  }
+  .track-meta {
+    grid-column: 2 / -1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    order: 3;
+    padding-top: 0.35rem;
+  }
+  .track-chevron {
+    grid-row: 1;
+    grid-column: 3;
+  }
+  .track-title-block {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .track-composer {
+    max-width: none;
+    white-space: normal;
+  }
+}

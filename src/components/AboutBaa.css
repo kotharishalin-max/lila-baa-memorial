@@ -1,0 +1,66 @@
+.about {
+  background: var(--bg);
+}
+
+.about-heading {
+  font-style: italic;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-subheading {
+  font-style: normal;
+  color: var(--text-muted);
+  font-size: 0.7em;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  margin-top: 0.3em;
+}
+
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 3rem auto 0;
+  max-width: var(--content-shell);
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--divider);
+}
+
+.about-facts > div {
+  text-align: center;
+}
+
+.about-facts dt {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.about-facts dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.fact-note {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  .about-facts {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

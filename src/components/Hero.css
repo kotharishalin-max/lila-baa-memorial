@@ -1,0 +1,124 @@
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-image-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: brightness(0.92) saturate(1.02);
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(25, 16, 10, 0.05) 0%,
+    rgba(25, 16, 10, 0.1) 45%,
+    rgba(25, 16, 10, 0.55) 85%,
+    rgba(25, 16, 10, 0.75) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--content-shell);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  width: 100%;
+}
+
+.hero-kicker {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 1rem;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0 0 1rem;
+  line-height: 0.95;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero-name-given {
+  font-size: var(--fs-display);
+  font-style: italic;
+}
+
+.hero-name-full {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-aka {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 0.35rem;
+}
+
+.hero-dates {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 2rem;
+}
+
+.hero-nav {
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.hero-nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.hero-nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 78vh;
+  }
+  .hero-content {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+  .hero-nav a {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}

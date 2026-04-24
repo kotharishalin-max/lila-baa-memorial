@@ -1,0 +1,114 @@
+.lyrics-panel {
+  background: var(--bg-elevated);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.lyrics-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--divider);
+  background: var(--bg-sunken);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.lyrics-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.lyrics-tab {
+  flex: 0 0 auto;
+  padding: 0.8rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+
+.lyrics-tab:hover {
+  color: var(--text);
+  background: rgba(139, 111, 71, 0.05);
+}
+
+.lyrics-tab.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: var(--bg-elevated);
+}
+
+.lyrics-body {
+  padding: 1.5rem 1.5rem;
+  max-height: 480px;
+  overflow-y: auto;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.lyrics-body p {
+  margin: 0 0 1em;
+  white-space: pre-wrap; /* Preserve single-line breaks from the MD */
+}
+
+.lyrics-body p:last-child {
+  margin-bottom: 0;
+}
+
+.lyrics-body strong {
+  color: var(--accent-hover);
+  font-weight: 600;
+}
+
+.lyrics-body em {
+  font-style: italic;
+}
+
+.lyrics-body :lang(gu) {
+  font-family: var(--font-gujarati);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.lyrics-body :lang(hi), .lyrics-body :lang(sa) {
+  font-family: var(--font-devanagari);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.lyrics-body-gujarati {
+  font-family: var(--font-gujarati);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.lyrics-body-romanized {
+  font-family: var(--font-body);
+}
+
+.lyrics-body-meaning,
+.lyrics-body-about,
+.lyrics-body-summary {
+  font-family: var(--font-body);
+  color: var(--text-soft);
+  font-size: 1rem;
+}
+
+.lyrics-empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .lyrics-body {
+    padding: 1.25rem 1rem;
+    max-height: 400px;
+  }
+}
