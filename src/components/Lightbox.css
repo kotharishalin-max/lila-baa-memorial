@@ -1,0 +1,125 @@
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(20, 14, 10, 0.94);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 92vw;
+  max-height: 95vh;
+  margin: 0 auto;
+}
+
+.lightbox-media {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-caption {
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  font-size: 0.9rem;
+  max-width: 600px;
+}
+
+.caption-text {
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.caption-meta {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.caption-meta a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: underline;
+}
+
+.caption-meta .sep {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.lightbox-nav {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: var(--font-display);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+  transition: background 0.15s ease;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+  transition: background 0.15s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 640px) {
+  .lightbox {
+    grid-template-columns: 1fr;
+  }
+  .lightbox-media {
+    max-height: 70vh;
+  }
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    font-size: 2rem;
+  }
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
+}
