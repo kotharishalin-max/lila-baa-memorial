@@ -102,6 +102,12 @@ export default function PhotoGallery() {
                   alt=""
                   loading="lazy"
                   draggable="false"
+                  onError={(e) => {
+                    // Hide broken thumbnail (e.g. a web-uploaded video without
+                    // a generated thumb) so the ▶ badge on the dark tile shows
+                    // cleanly instead of a broken-image icon.
+                    e.currentTarget.style.display = 'none'
+                  }}
                 />
                 {item.type === 'video' && (
                   <span className="video-badge" aria-hidden="true">
